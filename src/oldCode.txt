@@ -1,0 +1,28 @@
+const swapi = new SwapiService();
+
+swapi.getAllPeople().then((people) => {
+    people.forEach((p) => {
+        console.log(p.name);
+    });
+});
+
+swapi.getPerson(3).then((person) => {
+        console.log(person.name);
+});
+
+
+getResource('https://swapi.co/api/people/1dsdsd/')
+    .then((body) => {
+        console.log(body);
+})
+.catch((err) => {
+    console.error('Could not fetch', err)
+})
+fetch('https://swapi.co/api/people/1/')
+    .then((res) => {
+        return res.json();
+    })
+    .then((body) => {
+    console.log(body);
+});
+console.log('Got Response');
