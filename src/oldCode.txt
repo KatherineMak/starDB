@@ -26,3 +26,17 @@ fetch('https://swapi.co/api/people/1/')
     console.log(body);
 });
 console.log('Got Response');
+
+
+-----------prop Types
+ static propTypes = {
+        updateInterval: (props, propName, componentName) => {
+            const value = props[propName];
+
+            if (typeof value === 'number' && !isNaN(value)) {
+                return null;
+            }
+
+            return new TypeError(`${componentName}: ${propName} must be number`);
+        }
+    };
